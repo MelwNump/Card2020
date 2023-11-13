@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class ThisCard : MonoBehaviour
     public List<Card> thisCard = new List<Card>();
     public int thisId;
 
-   
+
     public int id;
     public string cardName;
     public int cost;
@@ -27,7 +28,7 @@ public class ThisCard : MonoBehaviour
     public Image thatImage;
     public Image frame;
 
-   
+
 
     public bool cardBack;
     public static bool staticCardBack;
@@ -98,7 +99,7 @@ public class ThisCard : MonoBehaviour
         thisCard[0] = CardDataBase.cardList[thisId];
 
         numberOfCardInDeck = PlayerDeck.deckSize;
-        
+
         canBeSummon = false;
         summoned = false;
         drawX = 0;
@@ -110,12 +111,12 @@ public class ThisCard : MonoBehaviour
 
         targeting = false;
         targetingEnemy = false;
-        
+
         canHeal = true;
         //attack
         EnemyZone = GameObject.Find("MyEnemyZone");
-       
-       
+
+
 
     }
 
@@ -141,18 +142,18 @@ public class ThisCard : MonoBehaviour
         addXmaxMana = thisCard[0].addXmaxMana;
 
         returnXcards = thisCard[0].returnXcard;
-        
+
         healXpower = thisCard[0].healXpower;
 
         //spell
-        spell= thisCard[0].spell;
+        spell = thisCard[0].spell;
         damageDealtBySpell = thisCard[0].damageDealtBySpell;
 
         nameText.text = "" + cardName;
         costText.text = "" + cost;
 
 
-        powerText.text = "" + actuallPower;
+        powerText.text = "" + power;
         descriptionText.text = " " + cardDescription;
         thatImage.sprite = thisSprite;
 
@@ -217,7 +218,7 @@ public class ThisCard : MonoBehaviour
         }
 
 
-        if (canAttack == true&&beInGraveyard == false)
+        if (canAttack == true && beInGraveyard == false)
         {
             attackBorder.SetActive(true);
         }
@@ -252,7 +253,7 @@ public class ThisCard : MonoBehaviour
         {
             Target = null;
         }
-        if (targeting == true  && onlyThisCardAttack == true)
+        if (targeting == true && onlyThisCardAttack == true)
         {
             Attack();
         }
@@ -266,11 +267,11 @@ public class ThisCard : MonoBehaviour
             summonBorder.SetActive(false);
         }
         //Destory //Spell
-        if (actuallPower < 0 && spell == false)
+        if (actuallPower <= 0 && summoned == true && spell == false)
         {
             Destory();
         }
-        
+
 
         //reTurn
         if (returnXcards > 0 && summoned == true && useReturn == false && TurnSystem.isYourTurn == true)
@@ -290,11 +291,11 @@ public class ThisCard : MonoBehaviour
 
         }
         //Spell
-        if(damageDealtBySpell >0)
+        if (damageDealtBySpell > 0)
         {
             dealDamage = true;
         }
-        if(dealDamage == true&&this.transform.parent == battleZone.transform )
+        if (dealDamage == true && this.transform.parent == battleZone.transform)
         {
             attackBorder.SetActive(true);
         }
@@ -303,22 +304,22 @@ public class ThisCard : MonoBehaviour
         //    attackBorder.SetActive(false);
         //}
 
-        if(dealDamage==true&&this.transform.parent == battleZone.transform)
+        if (dealDamage == true && this.transform.parent == battleZone.transform)
         {
             dealxDamage(damageDealtBySpell);
         }
 
-        if(stopDealDamage == true)
+        if (stopDealDamage == true)
         {
             attackBorder.SetActive(false);
             dealDamage = false;
         }
 
-        if(this.transform.parent == battleZone.transform &&spell ==true &&dealDamage == false)
+        if (this.transform.parent == battleZone.transform && spell == true && dealDamage == false)
         {
-            Destory(); 
+            Destory();
         }
-       
+
     }
     public void Summon()
     {
@@ -330,7 +331,7 @@ public class ThisCard : MonoBehaviour
     }
     public void MaxMana(int x)
     {
-        TurnSystem.maxMana += x ;
+        TurnSystem.maxMana += x;
     }
 
     public void Attack()
@@ -345,13 +346,13 @@ public class ThisCard : MonoBehaviour
                     targeting = false;
                     cantAttack = true;
                 }
-                
+
             }
             else
             {
-                foreach(Transform child in EnemyZone.transform)
+                foreach (Transform child in EnemyZone.transform)
                 {
-                    if(child.GetComponent<AICardToHand>().isTarget == true)
+                    if (child.GetComponent<AICardToHand>().isTarget == true)
                     {
                         child.GetComponent<AICardToHand>().hurted = power;
                         hurted = child.GetComponent<AICardToHand>().power;
@@ -389,7 +390,7 @@ public class ThisCard : MonoBehaviour
     //DestoryCard
     public void Destory()
     {
-       
+
         Graveyard = GameObject.Find("MyGraveyard");
         canBeDestory = true;
 
@@ -435,25 +436,25 @@ public class ThisCard : MonoBehaviour
     //Spell
     public void dealxDamage(int x)
     {
-        if(Target != null)
+        if (Target != null)
         {
-            if(Target == Enemy && stopDealDamage == false&& Input.GetMouseButton(0))
+            if (Target == Enemy && stopDealDamage == false && Input.GetMouseButton(0))
             {
                 EnemyHp.staticHp -= damageDealtBySpell;
                 stopDealDamage = true;
             }
             else
             {
-                 foreach(Transform child in EnemyZone.transform)
-                 {
-                    if(child.GetComponent<AICardToHand>().isTarget == true && Input.GetMouseButton(0))
+                foreach (Transform child in EnemyZone.transform)
+                {
+                    if (child.GetComponent<AICardToHand>().isTarget == true && Input.GetMouseButton(0))
                     {
                         child.GetComponent<AICardToHand>().hurted += damageDealtBySpell;
-                        stopDealDamage=true;
-                         
-                      
+                        stopDealDamage = true;
+
+
                     }
-                 }
+                }
             }
         }
     }

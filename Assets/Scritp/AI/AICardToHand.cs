@@ -123,13 +123,13 @@ public class AICardToHand : MonoBehaviour
         costText.text = "" + cost;
 
 
-        powerText.text = "" + actuallPower;
+        powerText.text = "" + power;
         descriptionText.text = " " + cardDescription;
         thatImage.sprite = thisSprite;
 
         healXpower = thisCard[0].healXpower;
 
-        actuallPower = power - hurted;
+        //actuallPower = power - hurted;
 
         //Color
         if (thisCard[0].color == "Red")
@@ -231,5 +231,6 @@ public class AICardToHand : MonoBehaviour
         yield return new WaitForSeconds(1);
         thisCardCanBeDestroyed = true;
     }
+
 
 }

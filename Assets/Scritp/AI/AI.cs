@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class AI : MonoBehaviour
 {
@@ -15,14 +16,14 @@ public class AI : MonoBehaviour
     public List<Card> cardsInZone = new List<Card>();
 
 
-   
+
 
     public GameObject Hand;
     public GameObject Zone;
     public GameObject Graveyard;
 
     public int x;
-    public static int  deckSize;
+    public static int deckSize;
 
     public GameObject cardInDeck1;
     public GameObject cardInDeck2;
@@ -64,13 +65,15 @@ public class AI : MonoBehaviour
     //ChooseEnemy
     public static int whichEnemy;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         //handAi
         //StartCoroutine(WaitFiveSeconds());
 
-       // StartCoroutine(StartGame());
+        // StartCoroutine(StartGame());
 
         Hand = GameObject.Find("EnemyHand");
         Zone = GameObject.Find("MyEnemyZone");
@@ -86,17 +89,17 @@ public class AI : MonoBehaviour
         //    x = Random.Range(1, 5);
         //    deck[i] = CardDataBase.cardList[x];
         //}
-        if(whichEnemy == 1)
+        if (whichEnemy == 1)
         {
-            for(int i = 0; i <deckSize; i++)
+            for (int i = 0; i < deckSize; i++)
             {
-                if(i<=19)
+                if (i <= 19)
                 {
-                    deck[i]=CardDataBase.cardList[2];
+                    deck[i] = CardDataBase.cardList[2];
                 }
                 else
                 {
-                    deck[i]=CardDataBase.cardList[3];
+                    deck[i] = CardDataBase.cardList[3];
                 }
             }
 
@@ -145,14 +148,14 @@ public class AI : MonoBehaviour
             cardInDeck4.SetActive(false);
         }
 
-       //draw Ai Ef
-        if(AICardToHand.DrawX>0)
+        //draw Ai Ef
+        if (AICardToHand.DrawX > 0)
         {
             StartCoroutine(Draw(AICardToHand.DrawX));
             AICardToHand.DrawX = 0;
         }
 
-        if(TurnSystem.startTurn == false&& draw == false)
+        if (TurnSystem.startTurn == false && draw == false)
         {
             StartCoroutine(Draw(1));
             draw = true;
@@ -161,24 +164,24 @@ public class AI : MonoBehaviour
         //summon
         currentMana = TurnSystem.currentEnemyMana;
 
-        if(0 == 0)
+        if (0 == 0)
         {
             int j = 0;
             howmanyCards = 0;
-            foreach(Transform child in Hand.transform)
+            foreach (Transform child in Hand.transform)
             {
                 howmanyCards++;
 
             }
-            foreach(Transform child in Hand.transform)
+            foreach (Transform child in Hand.transform)
             {
                 cardsInHand[j] = child.GetComponent<AICardToHand>().thisCard[0];
                 j++;
             }
 
-            for(int i=0;i<40;i++)
+            for (int i = 0; i < 40; i++)
             {
-                if(i >= howmanyCards)
+                if (i >= howmanyCards)
                 {
                     cardsInHand[i] = CardDataBase.cardList[0];
                 }
@@ -186,13 +189,13 @@ public class AI : MonoBehaviour
             j = 0;
         }
         //summon cost
-        if(TurnSystem.isYourTurn == false)
+        if (TurnSystem.isYourTurn == false)
         {
-            for(int i=0;i<40;i++)
+            for (int i = 0; i < 40; i++)
             {
                 if (cardsInHand[i].id != 0)
                 {
-                    if(currentMana >= cardsInHand[i].cost)
+                    if (currentMana >= cardsInHand[i].cost)
                     {
                         AiCanSummon[i] = true;
                     }
@@ -201,24 +204,24 @@ public class AI : MonoBehaviour
         }
         else
         {
-            for(int i=0;i<40;i++)
+            for (int i = 0; i < 40; i++)
             {
                 AiCanSummon[i] = false;
             }
         }
 
-        if(TurnSystem.isYourTurn == false)
+        if (TurnSystem.isYourTurn == false)
         {
             drawPhase = true;
         }
 
-        if(drawPhase == true&& summonPhase ==false && attackPhase == false)
+        if (drawPhase == true && summonPhase == false && attackPhase == false)
         {
             StartCoroutine(WaitForSummonPhase());
         }
 
 
-        if(TurnSystem.isYourTurn == true)
+        if (TurnSystem.isYourTurn == true)
         {
             drawPhase = false;
             summonPhase = false;
@@ -230,26 +233,26 @@ public class AI : MonoBehaviour
 
 
         //summonTrue
-        if(summonPhase == true)
+        if (summonPhase == true)
         {
             summonID = 0;
             summonThisId = 0;
 
-            int index =0;
-            for(int i =0;i<40;i++)
+            int index = 0;
+            for (int i = 0; i < 40; i++)
             {
-                if (AiCanSummon[i]==true)
+                if (AiCanSummon[i] == true)
                 {
                     cardsID[index] = cardsInHand[i].id;
                     index++;
                 }
             }
 
-            for(int i=0;i<40;i++)
+            for (int i = 0; i < 40; i++)
             {
                 if (cardsID[i] != 0)
                 {
-                    if(cardsID[i] > summonID)
+                    if (cardsID[i] > summonID)
                     {
                         summonID = cardsID[i];
                     }
@@ -258,9 +261,9 @@ public class AI : MonoBehaviour
             //MoveCardAiSummonTrue
             summonThisId = summonID;
 
-            foreach(Transform child in Hand.transform)
+            foreach (Transform child in Hand.transform)
             {
-               if(child.GetComponent<AICardToHand>().id == summonThisId && CardDataBase.cardList[summonThisId].cost <= currentMana)
+                if (child.GetComponent<AICardToHand>().id == summonThisId && CardDataBase.cardList[summonThisId].cost <= currentMana)
                 {
                     child.transform.SetParent(Zone.transform);
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;
@@ -274,7 +277,7 @@ public class AI : MonoBehaviour
         }
 
         //attack ai
-        if(0 == 0)
+        if (0 == 0)
         {
 
             int k = 0;
@@ -326,11 +329,11 @@ public class AI : MonoBehaviour
             l = 0;
         }
 
-        if(attackPhase == true&&endPhase == false)
+        if (attackPhase == true && endPhase == false)
         {
-            for(int i = 0;i<40;i++)
+            for (int i = 0; i < 40; i++)
             {
-                if(canAttack[i]==true)
+                if (canAttack[i] == true)
                 {
                     PlayerHp.staticHp -= cardsInZone[i].power;
                 }
@@ -338,7 +341,7 @@ public class AI : MonoBehaviour
             endPhase = true;
         }
 
-        if(endPhase == true)
+        if (endPhase == true)
         {
             AiEndPhase = true;
         }
@@ -347,11 +350,11 @@ public class AI : MonoBehaviour
 
 
     }
-    
+
 
     public void Shuffle()
     {
-        for(int i =0;i<deckSize;i++)
+        for (int i = 0; i < deckSize; i++)
         {
             container[0] = deck[i];
             int randomIndex = Random.Range(i, deckSize);
@@ -361,21 +364,21 @@ public class AI : MonoBehaviour
         }
 
         //CardbackAi
-       // Instantiate(CardBack, transform.position, transform.rotation);
+        // Instantiate(CardBack, transform.position, transform.rotation);
 
-       //StartCoroutine(ShuffleNow());
+        //StartCoroutine(ShuffleNow());
 
     }
 
     IEnumerator StartGame()
     {
         //CardToHandAi
-        for(int i = 0;i<=4;i++)
+        for (int i = 0; i <= 4; i++)
         {
             yield return new WaitForSeconds(1);
             Instantiate(CardToHand, transform.position, transform.rotation);
         }
-       
+
     }
 
     IEnumerator ShuffleNow()
@@ -391,7 +394,7 @@ public class AI : MonoBehaviour
 
     IEnumerator Draw(int x)
     {
-        for(int i=0;i<x;i++)
+        for (int i = 0; i < x; i++)
         {
             yield return new WaitForSeconds(1);
             Instantiate(CardToHand, transform.position, transform.rotation);
@@ -402,10 +405,10 @@ public class AI : MonoBehaviour
     IEnumerator WaitFiveSeconds()
     {
         yield return new WaitForSeconds(5);
-        
+
     }
 
-    IEnumerator WaitForSummonPhase ()
+    IEnumerator WaitForSummonPhase()
     {
         yield return new WaitForSeconds(5);
         summonPhase = true;
