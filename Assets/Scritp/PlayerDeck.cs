@@ -38,7 +38,7 @@ public class PlayerDeck : MonoBehaviour
 
     private void Awake()
     {
-        Shuffle();
+        //Shuffle();
     }
 
 
@@ -144,8 +144,8 @@ public class PlayerDeck : MonoBehaviour
             deck[i]=deck[randomIndex];
             deck[randomIndex] = container[0];
         }
-        Instantiate(CardBack, transform.position, transform.rotation);
-        StartCoroutine(Example());
+       // Instantiate(CardBack, transform.position, transform.rotation);
+        //StartCoroutine(Example());
     }
     IEnumerator Example()
     {

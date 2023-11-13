@@ -107,6 +107,9 @@ public class TurnSystem : MonoBehaviour
         //Ai Draw
         AI.draw = false;
 
+        timeStart = true;
+        seconds = 60;
+
     }
     public void EndYourOponentTurn()
     {
@@ -117,6 +120,9 @@ public class TurnSystem : MonoBehaviour
         currentMana = maxMana;
 
         startTurn = true;
+
+        timeStart = true;
+        seconds = 60;
 
 
     }
@@ -154,9 +160,10 @@ public class TurnSystem : MonoBehaviour
 
     IEnumerator Timer()
     {
+        yield return new WaitForSeconds(1);
         if (isYourTurn == true && seconds > 0)
         {
-            yield return new WaitForSeconds(1);
+           // yield return new WaitForSeconds(1);
             seconds--;
             StartCoroutine(Timer()); 
         }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 5df1bf2127867234b81009fc47dec4ef
   - enabled: 1
+    path: Assets/Scenes/ChoosEnemy.unity
+    guid: 76c4f5a116ba1dc409f57f24e4712669
+  - enabled: 1
     path: Assets/Scenes/GameCard.unity
     guid: 2221b2dc2fb21b740bdf107220bb4a59
   - enabled: 1

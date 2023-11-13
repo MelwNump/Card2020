@@ -34,6 +34,9 @@ public class Collection : MonoBehaviour
 
     public string card;
 
+    public int cardInColltion;
+    public int numberOfCardOnpage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,9 @@ public class Collection : MonoBehaviour
                 getRandomCard();
             }
         }
+
+        cardInColltion = 8;
+        numberOfCardOnpage = 4;
     }
 
     // Update is called once per frame
@@ -156,11 +162,17 @@ public class Collection : MonoBehaviour
 
     public void Left()
     {
-        x -= 4;
+      if(x != 1)
+        {
+            x -= numberOfCardOnpage;
+        }
     }
     public void Right()
     {
-        x += 4;
+        if (x != (cardInColltion - numberOfCardOnpage) + 1)
+        {
+            x += numberOfCardOnpage;
+        }
     }
 
     public void getRandomCard()

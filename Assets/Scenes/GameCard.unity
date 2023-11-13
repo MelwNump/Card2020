@@ -2512,6 +2512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91150e3c89e7ed74eb4bbaefcfce6f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestHp: 0
   hp: 0
   Health: {fileID: 741206736}
   hpText: {fileID: 1496758179}
@@ -3184,6 +3185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38a7cca0b1e5c34f9645feef8973dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestHp: 0
   hp: 0
   Health: {fileID: 1165504067}
   hpText: {fileID: 1666784643}
@@ -3671,6 +3673,7 @@ GameObject:
   - component: {fileID: 1538089642}
   - component: {fileID: 1538089641}
   - component: {fileID: 1538089640}
+  - component: {fileID: 1538089644}
   m_Layer: 0
   m_Name: MyGraveyard
   m_TagString: Untagged
@@ -3773,6 +3776,539 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538089638}
   m_CullTransparentMesh: 1
+--- !u!114 &1538089644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538089638}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9bc5dd7e9a8c14ea75fc830e3c668f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graveyard:
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    drawXcards: 0
+    addXmaxMana: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    color: 
+    returnXcard: 0
+    healXpower: 0
+    spell: 0
+    damageDealtBySpell: 0
 --- !u!1 &1562941059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +4359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryText: {fileID: 737265678}
   textOject: {fileID: 737265676}
+  money: {fileID: 2002178423}
+  gotMoney: 0
 --- !u!1 &1602726822
 GameObject:
   m_ObjectHideFlags: 0
@@ -7739,6 +8277,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4379018188012314852, guid: 23e403eb30efce04ba65a23a269b48b4, type: 3}
   m_PrefabInstance: {fileID: 767270755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2002178423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002178425}
+  - component: {fileID: 2002178424}
+  m_Layer: 0
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2002178424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002178423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba09561316ea0084c9f389d1989e8c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoldText: {fileID: 0}
+  gold: 0
+  PlayDuel: 1
+--- !u!4 &2002178425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002178423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 847.84467, y: 500.08228, z: -139.99156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026685347
 GameObject:
   m_ObjectHideFlags: 0

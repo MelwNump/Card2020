@@ -14,10 +14,7 @@ public class CardDataBase : MonoBehaviour
         cardList.Add(new Card(3, "Rara", 4, 2000, "Heal 1000", Resources.Load<Sprite>("3"), "Yellow", 0, 0, 0,1000, false, 0));
         cardList.Add(new Card(4, "GG", 5, 1000, "DrawCards 1,Return 1 Card", Resources.Load<Sprite>("4"), "Purple", 1, 0, 1,0, false, 0));
         cardList.Add(new Card(5, "GGO", 6, 1000, "Return 1 Card and Heal 1000", Resources.Load<Sprite>("5"), "Purple", 0, 0, 1,1000, false, 0));
-        
         cardList.Add(new Card(8, "Hoster", 1, 1500, "Monster", Resources.Load<Sprite>("8"), "Red", 0, 0, 0, 0, false, 0));
-        //cardList.Add(new Card(8, "Oowe", 2, 2000, "Monster", Resources.Load<Sprite>("9"), "Red", 0, 0, 0, 0, false, 0));
-
 
         //spell
         cardList.Add(new Card(6, "FireBall", 7, 0, "Deal 2500", Resources.Load<Sprite>("6"), "Purple", 1, 0, 0, 0, true, 2500));

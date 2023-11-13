@@ -61,13 +61,16 @@ public class AI : MonoBehaviour
     public bool[] canAttack;
     public static bool AiEndPhase;
 
+    //ChooseEnemy
+    public static int whichEnemy;
+
     // Start is called before the first frame update
     void Start()
     {
         //handAi
-        StartCoroutine(WaitFiveSeconds());
+        //StartCoroutine(WaitFiveSeconds());
 
-        StartCoroutine(StartGame());
+       // StartCoroutine(StartGame());
 
         Hand = GameObject.Find("EnemyHand");
         Zone = GameObject.Find("MyEnemyZone");
@@ -78,11 +81,44 @@ public class AI : MonoBehaviour
 
         draw = true;
 
-        for(int i=0; i < deckSize; i++)
+        //for(int i=0; i < deckSize; i++)
+        //{
+        //    x = Random.Range(1, 5);
+        //    deck[i] = CardDataBase.cardList[x];
+        //}
+        if(whichEnemy == 1)
         {
-            x = Random.Range(1, 5);
-            deck[i] = CardDataBase.cardList[x];
+            for(int i = 0; i <deckSize; i++)
+            {
+                if(i<=19)
+                {
+                    deck[i]=CardDataBase.cardList[2];
+                }
+                else
+                {
+                    deck[i]=CardDataBase.cardList[3];
+                }
+            }
+
         }
+        if (whichEnemy == 2)
+        {
+            for (int i = 0; i < deckSize; i++)
+            {
+                if (i <= 19)
+                {
+                    deck[i] = CardDataBase.cardList[1];
+                }
+                else
+                {
+                    deck[i] = CardDataBase.cardList[4];
+                }
+            }
+
+        }
+
+        Shuffle();
+        StartCoroutine(StartGame());
     }
 
     // Update is called once per frame
@@ -325,9 +361,9 @@ public class AI : MonoBehaviour
         }
 
         //CardbackAi
-        Instantiate(CardBack, transform.position, transform.rotation);
+       // Instantiate(CardBack, transform.position, transform.rotation);
 
-        StartCoroutine(ShuffleNow());
+       //StartCoroutine(ShuffleNow());
 
     }
 

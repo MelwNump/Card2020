@@ -49,6 +49,7 @@ public class ThisCard : MonoBehaviour
 
     public bool summoningSickness;
     public bool cantAttack;
+
     public bool canAttack;
 
     public static bool staticTargeting;
@@ -64,7 +65,8 @@ public class ThisCard : MonoBehaviour
     public bool canBeDestory;
     public GameObject Graveyard;
     public bool beInGraveyard;
-    public int Powers;
+
+    //public int Powers;
     //return
     public int hurted;
     public int actuallPower;
@@ -150,11 +152,11 @@ public class ThisCard : MonoBehaviour
         costText.text = "" + cost;
 
 
-        powerText.text = "" + power;
+        powerText.text = "" + actuallPower;
         descriptionText.text = " " + cardDescription;
         thatImage.sprite = thisSprite;
 
-        Powers = power - hurted;
+        actuallPower = power - hurted;
 
 
         if (thisCard[0].color == "Red")
@@ -264,9 +266,9 @@ public class ThisCard : MonoBehaviour
             summonBorder.SetActive(false);
         }
         //Destory //Spell
-        if (Powers <= 0 && spell == false)
+        if (actuallPower < 0 && spell == false)
         {
-            DestoryT();
+            Destory();
         }
         
 
@@ -296,10 +298,10 @@ public class ThisCard : MonoBehaviour
         {
             attackBorder.SetActive(true);
         }
-        else
-        {
-            attackBorder.SetActive(false);
-        }
+        //else
+        //{
+        //    attackBorder.SetActive(false);
+        //}
 
         if(dealDamage==true&&this.transform.parent == battleZone.transform)
         {
@@ -314,7 +316,7 @@ public class ThisCard : MonoBehaviour
 
         if(this.transform.parent == battleZone.transform &&spell ==true &&dealDamage == false)
         {
-            DestoryT(); 
+            Destory(); 
         }
        
     }
@@ -328,7 +330,7 @@ public class ThisCard : MonoBehaviour
     }
     public void MaxMana(int x)
     {
-        TurnSystem.maxMana += addXmaxMana;
+        TurnSystem.maxMana += x ;
     }
 
     public void Attack()
@@ -385,10 +387,12 @@ public class ThisCard : MonoBehaviour
         onlyThisCardAttack = false;
     }
     //DestoryCard
-    public void DestoryT()
+    public void Destory()
     {
+       
         Graveyard = GameObject.Find("MyGraveyard");
         canBeDestory = true;
+
         if (canBeDestory == true)
         {
             this.transform.SetParent(Graveyard.transform);

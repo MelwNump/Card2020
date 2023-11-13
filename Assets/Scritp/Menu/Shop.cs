@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI GoldText;
     public int gold;
+    public bool PlayDuel;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +22,28 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GoldText.text = "Money" +"  "+ gold+"$";
+        if(PlayDuel == false)
+        {
+            GoldText.text = "Money" + "  " + gold + "$";
+        }
+        else
+        {
+            PlayerPrefs.SetInt("gold", gold);
+        }
+        //GoldText.text = "Money" +"  "+ gold+"$";
     }
     
     public void BuyPack()
     {
+        if(gold >= 100)
+        {
+            gold -= 100;
+
+            PlayerPrefs.SetInt("gold", gold);
+            SceneManager.LoadScene("OpenPack");
+
+        }
         gold -= 100;
-        SceneManager.LoadScene("OpenPack");
-
-        PlayerPrefs.SetInt("gold", gold);
-
-        SceneManager.LoadScene("OpenPack");
+     
     }
 }

@@ -8,6 +8,7 @@ public class PlayerHp : MonoBehaviour
 {
     public static float maxHp;
     public static float staticHp;
+    public float TestHp;
     public float hp;
     public Image Health;
     public TextMeshProUGUI hpText;
@@ -15,7 +16,9 @@ public class PlayerHp : MonoBehaviour
     void Start()
     {
         maxHp = 25000;
-        staticHp = 24000;
+        staticHp = 25000;
+      TestHp = staticHp;
+       
     }
 
     // Update is called once per frame
@@ -28,5 +31,6 @@ public class PlayerHp : MonoBehaviour
             hp = maxHp;
         }
         hpText.text = "HP"+hp;
+        staticHp = TestHp;
     }
 }
